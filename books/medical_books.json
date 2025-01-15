@@ -1,0 +1,29 @@
+[
+    { "title": "Medical Terminology", 
+      "author": "Dr.Betsy J. Shiland", 
+      "cost": "$30", 
+      "description": "A reference book for students of medical science.", 
+      "image": "" },
+    {
+      "title":"Introduction to Medicine",
+      "author": "Dr. Smith",
+      "cost": "$50",
+      "description": "A foundational guide to medical studies and principles.",
+      "image": "https://m.media-amazon.com/images/I/41-eq4l07fL._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "title": "Surgery 101",
+      "author": "Dr. Lee",
+      "cost": "$65",
+      "description": "An introductory text on the basics of surgical procedures.",
+      "image": "https://media.springernature.com/full/springer-static/cover-hires/book/978-3-662-63632-9"
+    },
+    {
+      "title": "Pharmacology for Beginners",
+      "author": "Dr. Johnson",
+      "cost": "$40",
+      "description": "A beginner's guide to the study of drugs and their effects.",
+      "image": ""
+
+    }
+  ]

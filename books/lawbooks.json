@@ -1,0 +1,31 @@
+[
+    {
+      "title": "Introduction to Art",
+      "author": "Jane Smith",
+      "cost": "$25",
+      "description": "A beginner's guide to understanding the world of art.",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387740739i/92822.jpg"
+    },
+    {
+      "title": "The History of Art",
+      "author": "Jansons",
+      "cost": "$30",
+      "description": "A classic introduction to the world of art, covering all periods.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlX2lKox44rHAY5CY90CzuuyPqvOEjDt5mj9r0sU-UI7V7Lin4ROBkkZy_MWd-Evtek-g&usqp=CAU"
+    },
+    {
+      "title": "Art & Visual Culture",
+      "author": "Malcolm Barnard",
+      "cost": "$18",
+      "description": "A deeper exploration of the visual language of art and culture.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR63I6OFmx8DS9peL_j2wpi2rTzkgp84yg3Iw&s"
+    },
+    {
+      "title": "The Art of Drawing",
+      "author": "Willy Pogany",
+      "cost": "$22",
+      "description": "Master the art of drawing with this comprehensive guide.",
+      "image": "https://m.media-amazon.com/images/I/51UFYEzxlyL._SY445_SX342_.jpg"
+    }
+  ]
+  
