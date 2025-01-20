@@ -61,11 +61,13 @@ document.getElementById("art_books").addEventListener("click", () => {
               <h5 class="card-title">${book.title}</h5>
               <p class="card-text">Author: ${book.author}</p>
               <p class="card-text">Price: ${book.cost}</p>
+              <p class="card-text">Price: ${book.cost}</p>
               <button class="btn btn-primary" 
                 data-bs-toggle="modal" 
                 data-bs-target="#bookModal" 
                 data-title="${book.title}" 
                 data-author="${book.author}" 
+                data-cost="${book.cost}" 
                 data-cost="${book.cost}" 
                 data-image="${book.image}" 
                 data-description="${book.description}">
@@ -108,11 +110,13 @@ window.addEventListener('DOMContentLoaded', loadHome);
   const bookModalDescription = document.getElementById('bookModalDescription');
   const bookModalAuthor = document.getElementById('bookModalAuthor');
   const bookModalcost = document.getElementById('bookModalcost');
+  const bookModalcost = document.getElementById('bookModalcost');
 
   bookModal.addEventListener('show.bs.modal', (event) => {
     const button = event.relatedTarget; // Button that triggered the modal
     const title = button.getAttribute('data-title');
     const author = button.getAttribute('data-author');
+    const cost = button.getAttribute('data-cost');
     const cost = button.getAttribute('data-cost');
     const image = button.getAttribute('data-image');
     const description = button.getAttribute('data-description');
@@ -122,6 +126,7 @@ window.addEventListener('DOMContentLoaded', loadHome);
     bookModalImage.src = image;
     bookModalDescription.textContent = description;
     bookModalAuthor.textContent = `Author: ${author}`;
+    bookModalcost.textContent = `cost: ${cost}`;
     bookModalcost.textContent = `cost: ${cost}`;
   });
 // Sample arrays to store purchased and rented books  

@@ -1,0 +1,58 @@
+[  
+    {   
+        "title": "Law book - 1",   
+        "author": "John Doe",   
+        "cost": "$20",  
+        "description": "A comprehensive guide to mastering JavaScript for web development.",   
+        "image": "https://m.media-amazon.com/images/I/51YB0gZp+aL._SX342_SY445_.jpg"   
+    },  
+    {  
+        "title": "Law book - 2",  
+        "author": "Jane Smith",  
+        "cost": "$15",  
+        "description": "An easy-to-follow guide for learning Python programming.",  
+        "image": "https://m.media-amazon.com/images/I/518csN6TPsL._SY445_SX342_.jpg"  
+    },  
+    {  
+        "title": "Law book - 3",  
+        "author": "A Wiley Brand",  
+        "cost": "$25",  
+        "description": "R is a free, open-source programming language used for statistical analysis, data visualization, and machine learning.",  
+        "image": "https://m.media-amazon.com/images/I/51ba9iQ7pxL._SX342_SY445_.jpg"  
+    },  
+    {  
+        "title": "Law book - 4",  
+        "author": "James Bond",  
+        "cost": "$25",  
+        "description": "Step-by-step instructions to create beautiful websites using HTML and CSS.",  
+        "image": "https://m.media-amazon.com/images/I/51vaW9RuK0L._SY445_SX342_.jpg"  
+    },  
+    {   
+        "title": "Law book - 5",   
+        "author": "John Doe",   
+        "cost": "$20",  
+        "description": "A comprehensive guide to mastering JavaScript for web development.",   
+        "image": "https://m.media-amazon.com/images/I/51YB0gZp+aL._SX342_SY445_.jpg"   
+    },  
+    {  
+        "title": "Law book - 6",  
+        "author": "Jane Smith",  
+        "cost": "$15",  
+        "description": "An easy-to-follow guide for learning Python programming.",  
+        "image": "https://m.media-amazon.com/images/I/518csN6TPsL._SY445_SX342_.jpg"  
+    },  
+    {  
+        "title": "Law book - 7",  
+        "author": "A Wiley Brand",  
+        "cost": "$25",  
+        "description": "R is a free, open-source programming language used for statistical analysis, data visualization, and machine learning.",  
+        "image": "https://m.media-amazon.com/images/I/51ba9iQ7pxL._SX342_SY445_.jpg"  
+    },  
+    {  
+        "title": "Law book - 8",  
+        "author": "James Bond",  
+        "cost": "$25",  
+        "description": "Step-by-step instructions to create beautiful websites using HTML and CSS.",  
+        "image": "https://m.media-amazon.com/images/I/51vaW9RuK0L._SY445_SX342_.jpg"  
+    }  
+]
