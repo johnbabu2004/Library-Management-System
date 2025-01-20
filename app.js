@@ -9,7 +9,7 @@ document.getElementById("computer_books").addEventListener("click", () => {
 
   });
 document.getElementById("art_books").addEventListener("click", () => {
-    fetch('books/artbooks.json')
+    fetch('books/arts_books.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
           createCards(data);    
@@ -19,7 +19,7 @@ document.getElementById("art_books").addEventListener("click", () => {
 
   });
   document.getElementById("law_books").addEventListener("click", () => {
-    fetch('books/lawbooks.json')
+    fetch('books/law_books.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
           createCards(data);    
@@ -61,13 +61,11 @@ document.getElementById("art_books").addEventListener("click", () => {
               <h5 class="card-title">${book.title}</h5>
               <p class="card-text">Author: ${book.author}</p>
               <p class="card-text">Price: ${book.cost}</p>
-              <p class="card-text">Price: ${book.cost}</p>
               <button class="btn btn-primary" 
                 data-bs-toggle="modal" 
                 data-bs-target="#bookModal" 
                 data-title="${book.title}" 
                 data-author="${book.author}" 
-                data-cost="${book.cost}" 
                 data-cost="${book.cost}" 
                 data-image="${book.image}" 
                 data-description="${book.description}">
@@ -110,7 +108,6 @@ window.addEventListener('DOMContentLoaded', loadHome);
   const bookModalDescription = document.getElementById('bookModalDescription');
   const bookModalAuthor = document.getElementById('bookModalAuthor');
   const bookModalcost = document.getElementById('bookModalcost');
-  
   bookModal.addEventListener('show.bs.modal', (event) => {
     const button = event.relatedTarget; // Button that triggered the modal
     const title = button.getAttribute('data-title');
@@ -124,7 +121,6 @@ window.addEventListener('DOMContentLoaded', loadHome);
     bookModalImage.src = image;
     bookModalDescription.textContent = description;
     bookModalAuthor.textContent = `Author: ${author}`;
-    bookModalcost.textContent = `cost: ${cost}`;
     bookModalcost.textContent = `cost: ${cost}`;
   });
 // Sample arrays to store purchased and rented books  
@@ -146,6 +142,7 @@ function openBookModal(title, author, price, image, description) {
 
 // Function to handle the buy action  
 document.getElementById('buya').addEventListener('click', function () {  
+  alert("Book Purchased Successfully");
     const title = document.getElementById('bookModalLabel').textContent;  
     const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
     const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
@@ -160,14 +157,15 @@ document.getElementById('buya').addEventListener('click', function () {
 
 // Function to handle the rent action  
 document.getElementById('renta').addEventListener('click', function () {  
+    alert("Book Rented Successfully");
     const title = document.getElementById('bookModalLabel').textContent;  
     const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
     const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
-
+     
     const book = { title, author, price };  
     rentedBooks.push(book);  
     updateRentedBooksModal();  
-
+     
     const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));  
     bookModal.hide();  
 });  

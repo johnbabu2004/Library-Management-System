@@ -1,107 +1,107 @@
 [
-    {
-        "title": "Introduction to Law",
-        "author": "John Doe",
-        "cost": "$30",
-        "description": "A comprehensive introduction to the fundamentals of law.",
-        "image": "https://m.media-amazon.com/images/I/61vfxLlZnVL._AC_UF1000,1000_QL80_.jpg"
-    },
-    {
-        "title": "Criminal Law Basics",
-        "author": "Jane Smith",
-        "cost": "$45",
-        "description": "An overview of criminal law and its applications in society.",
-        "image": "https://m.media-amazon.com/images/I/41kF4gDE-TL._SY445_SX342_.jpg"
-    },
-    {
-        "title": "Constitutional Law",
-        "author": "William Johnson",
-        "cost": "$60",
-        "description": "A detailed examination of constitutional law and its significance.",
-        "image": "https://m.media-amazon.com/images/I/41+TLM5YPwL._AC_UF1000,1000_QL80_.jpg"
-    },
-    {
-        "title": "Contract Law Principles",
-        "author": "Dr. Emily Brown",
-        "cost": "$40",
-        "description": "Understanding the essential principles of contract law.",
-        "image": "https://m.media-amazon.com/images/I/81IC2mZ+gjL._AC_UF1000,1000_QL80_.jpg"
-    },
-    {
-        "title": "Family Law",
-        "author": "Michael Davis",
-        "cost": "$50",
-        "description": "A guide to family law, including marriage, divorce, and child custody.",
-        "image": "https://m.media-amazon.com/images/I/71js5Y0qRBL._AC_UF1000,1000_QL80_.jpg"
-    },
-    {
-        "title": "Tort Law Explained",
-        "author": "Sarah Miller",
-        "cost": "$55",
-        "description": "An easy-to-understand explanation of tort law and personal injury cases.",
-        "image": "https://m.media-amazon.com/images/I/417LXwKxbML._SY445_SX342_.jpg"
-    },
-    {
-        "title": "Property Law",
-        "author": "David Wilson",
-        "cost": "$65",
-        "description": "A comprehensive study of property law, including ownership and transfer of property.",
-        "image": "https://m.media-amazon.com/images/I/41d9kNG78nL._SX320_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "International Law",
-        "author": "Robert Harris",
-        "cost": "$70",
-        "description": "An introduction to the principles of international law and global legal systems.",
-        "image": "https://m.media-amazon.com/images/I/51XHftMfNPL._SX329_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Corporate Law",
-        "author": "Jennifer Clark",
-        "cost": "$80",
-        "description": "A guide to corporate law and the legal frameworks governing business practices.",
-        "image": "https://m.media-amazon.com/images/I/51zk7c6FskL._SX372_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Environmental Law",
-        "author": "William Lee",
-        "cost": "$60",
-        "description": "An exploration of laws related to environmental protection and sustainability.",
-        "image": "https://m.media-amazon.com/images/I/51fPjY0RxRL._SX332_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Human Rights Law",
-        "author": "Charlotte Lewis",
-        "cost": "$75",
-        "description": "A comprehensive look at human rights law and its impact on society.",
-        "image": "https://m.media-amazon.com/images/I/510YpvhZ5gL._SX327_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Legal Research and Writing",
-        "author": "James Walker",
-        "cost": "$40",
-        "description": "A guide to conducting legal research and writing legal documents.",
-        "image": "https://m.media-amazon.com/images/I/51I1kWEmYpL._SX326_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Administrative Law",
-        "author": "Jessica Martinez",
-        "cost": "$50",
-        "description": "A detailed guide to the legal principles governing government agencies and regulations.",
-        "image": "https://m.media-amazon.com/images/I/41Y5P7Y0FqL._SX326_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Civil Procedure",
-        "author": "Christopher Moore",
-        "cost": "$65",
-        "description": "An introduction to civil litigation and procedural law.",
-        "image": "https://m.media-amazon.com/images/I/51WFMmlf7tL._SX325_BO1,204,203,200_.jpg"
-    },
-    {
-        "title": "Bankruptcy Law",
-        "author": "Laura King",
-        "cost": "$55",
-        "description": "A guide to bankruptcy law, covering personal and corporate bankruptcy procedures.",
-        "image": "https://m.media-amazon.com/images/I/51uJ4yFzZ1L._SX328_BO1,204,203,200_.jpg"
-    }
+  {
+      "title": "Introduction to Art",
+      "author": "Jane Smith",
+      "cost": "$25",
+      "description": "A beginner's guide to understanding the world of art.",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1387740739i/92822.jpg"
+  },
+  {
+      "title": "The History of Art",
+      "author": "Jansons",
+      "cost": "$30",
+      "description": "A classic introduction to the world of art, covering all periods.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlX2lKox44rHAY5CY90CzuuyPqvOEjDt5mj9r0sU-UI7V7Lin4ROBkkZy_MWd-Evtek-g&usqp=CAU"
+  },
+  {
+      "title": "Art & Visual Culture",
+      "author": "Malcolm Barnard",
+      "cost": "$18",
+      "description": "A deeper exploration of the visual language of art and culture.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR63I6OFmx8DS9peL_j2wpi2rTzkgp84yg3Iw&s"
+  },
+  {
+      "title": "The Art of Drawing",
+      "author": "Willy Pogany",
+      "cost": "$22",
+      "description": "Master the art of drawing with this comprehensive guide.",
+      "image": "https://m.media-amazon.com/images/I/51UFYEzxlyL._SY445_SX342_.jpg"
+  },
+  {
+      "title": "Ways of Seeing",
+      "author": "John Berger",
+      "cost": "$12",
+      "description": "A groundbreaking work that transforms how we understand visual art.",
+      "image": "https://m.media-amazon.com/images/I/61rbO4IAa4L.jpg"
+  },
+  {
+      "title": "Art History",
+      "author": "Marilyn Stokstad",
+      "cost": "$50",
+      "description": "A comprehensive textbook on art history, covering various artistic movements.",
+      "image": "https://m.media-amazon.com/images/I/51ajrMPD9vL._SL500_.jpg"
+  },
+  {
+      "title": "The Story of Art",
+      "author": "E.H. Gombrich",
+      "cost": "$30",
+      "description": "One of the most famous books on art, perfect for newcomers.",
+      "image": "https://m.media-amazon.com/images/I/710i2Bp9KVL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+      "title": "Art: A World History",
+      "author": "Elke Linda Buchholz",
+      "cost": "$35",
+      "description": "A complete guide to the major movements and artists from ancient times to the modern age.",
+      "image": "https://m.media-amazon.com/images/I/91-YW-MPPEL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+      "title": "Drawing on the Right Side of the Brain",
+      "author": "Betty Edwards",
+      "cost": "$18",
+      "description": "This book helps develop drawing skills by teaching how to engage the brain’s right hemisphere.",
+      "image": "https://m.media-amazon.com/images/I/818899468wL.jpg"
+  },
+  {
+      "title": "The Elements of Drawing",
+      "author": "John Ruskin",
+      "cost": "$15",
+      "description": "A beautiful guide to the essential principles of drawing.",
+      "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1328865598i/769637.jpg"
+  },
+  {
+      "title": "The Art Book",
+      "author": "Phaidon Press",
+      "cost": "$25",
+      "description": "A visual guide showcasing the world’s most important artists and works.",
+      "image": "https://m.media-amazon.com/images/I/61fRtStU3GL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+      "title": "The Beginner's Guide to Drawing",
+      "author": "Chris Hart",
+      "cost": "$20",
+      "description": "A beginner’s guide to the basics of drawing, from line to form.",
+      "image": "https://m.media-amazon.com/images/I/91y4ysdiikL._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+      "title": "Modern Art: A Very Short Introduction",
+      "author": "David Cottington",
+      "cost": "$12",
+      "description": "A concise introduction to modern art, exploring its evolution and key movements.",
+      "image": "https://m.media-amazon.com/images/I/91n0ZyvefrL._UF1000,1000_QL80_.jpg"
+  },
+  {
+      "title": "The Art of Color",
+      "author": "Johannes Itten",
+      "cost": "$45",
+      "description": "A detailed exploration of color theory, one of the most important elements of art.",
+      "image": "https://m.media-amazon.com/images/I/512uTXi94-L._AC_UF1000,1000_QL80_.jpg"
+  },
+  {
+      "title": "The Penguin Dictionary of Art and Artists",
+      "author": "Peter and Linda Murray",
+      "cost": "$18",
+      "description": "A comprehensive reference for artists, art movements, and techniques.",
+      "image": "https://m.media-amazon.com/images/I/61Qq8eZWWuL._AC_UF1000,1000_QL80_.jpg"
+  }
 ]
