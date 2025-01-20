@@ -124,16 +124,83 @@ window.addEventListener('DOMContentLoaded', loadHome);
     bookModalAuthor.textContent = `Author: ${author}`;
     bookModalcost.textContent = `cost: ${cost}`;
   });
+// Sample arrays to store purchased and rented books  
+let purchasedBooks = [];  
+let rentedBooks = [];  
 
-  // Handle Rent and Buy button clicks
-  document.getElementById('renta').addEventListener('click', () => {
-    alert('Book added to your rented list!');
-    // Add your rent logic here
-  });
+// Function to open the book modal and populate its content  
+function openBookModal(title, author, price, image, description) {  
+    document.getElementById('bookModalLabel').textContent = title;  
+    document.getElementById('bookModalAuthor').textContent = 'Author: ' + author;  
+    document.getElementById('bookModalPrice').textContent = 'Price: ' + price;  
+    document.getElementById('bookModalImage').src = image;  
+    document.getElementById('bookModalDescription').textContent = description;  
+    
+    // Show the modal  
+    const bookModal = new bootstrap.Modal(document.getElementById('bookModal'));  
+    bookModal.show();  
+}  
 
-  document.getElementById('buya').addEventListener('click', () => {
-    alert('Book added to your purchased list!');
-    // Add your buy logic here
-  });
+// Function to handle the buy action  
+document.getElementById('buya').addEventListener('click', function () {  
+    const title = document.getElementById('bookModalLabel').textContent;  
+    const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
+    const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
+
+    const book = { title, author, price };  
+    purchasedBooks.push(book);  
+    updatePurchasedBooksModal();  
+
+    const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));  
+    bookModal.hide();  
+});  
+
+// Function to handle the rent action  
+document.getElementById('renta').addEventListener('click', function () {  
+    const title = document.getElementById('bookModalLabel').textContent;  
+    const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
+    const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
+
+    const book = { title, author, price };  
+    rentedBooks.push(book);  
+    updateRentedBooksModal();  
+
+    const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));  
+    bookModal.hide();  
+});  
+
+// Function to update the purchased books modal view  
+function updatePurchasedBooksModal() {  
+    const purchasedBooksContainer = document.getElementById('purchasedBooksContainer');  
+    purchasedBooksContainer.innerHTML = ''; // Clear previous entries  
+
+    purchasedBooks.forEach(book => {  
+        const listItem = document.createElement('li');  
+        listItem.className = 'list-group-item';  
+        listItem.textContent = `${book.title} by ${book.author} - ${book.price}`;  
+        purchasedBooksContainer.appendChild(listItem);  
+    });  
+}  
+
+// Function to update the rented books modal view  
+function updateRentedBooksModal() {  
+    const rentedBooksContainer = document.getElementById('rentedBooksContainer');  
+    rentedBooksContainer.innerHTML = ''; // Clear previous entries  
+
+    rentedBooks.forEach(book => {  
+        const listItem = document.createElement('li');  
+        listItem.className = 'list-group-item';  
+        listItem.textContent = `${book.title} by ${book.author} - ${book.price}`;  
+        rentedBooksContainer.appendChild(listItem);  
+    });  
+}  
+
+// Example function to load book cards (already included in your code)  
+// Use this function to load books on the screen and set events on the cards  
+function loadBookCard(book) {  
+    openBookModal(book.title, book.author, book.price, book.image, book.description);  
+}  
+
+// Here you would call loadBookCard when a book card is clicked.
 });
 
