@@ -110,13 +110,11 @@ window.addEventListener('DOMContentLoaded', loadHome);
   const bookModalDescription = document.getElementById('bookModalDescription');
   const bookModalAuthor = document.getElementById('bookModalAuthor');
   const bookModalcost = document.getElementById('bookModalcost');
-  const bookModalcost = document.getElementById('bookModalcost');
-
+  
   bookModal.addEventListener('show.bs.modal', (event) => {
     const button = event.relatedTarget; // Button that triggered the modal
     const title = button.getAttribute('data-title');
     const author = button.getAttribute('data-author');
-    const cost = button.getAttribute('data-cost');
     const cost = button.getAttribute('data-cost');
     const image = button.getAttribute('data-image');
     const description = button.getAttribute('data-description');
