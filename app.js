@@ -1,3 +1,4 @@
+
 document.getElementById("computer_books").addEventListener("click", () => {
     fetch('books/computer_books.json')
     .then(response => response.json()) // Parse the JSON data
@@ -128,17 +129,17 @@ let purchasedBooks = [];
 let rentedBooks = [];  
 
 // Function to open the book modal and populate its content  
-function openBookModal(title, author, price, image, description) {  
-    document.getElementById('bookModalLabel').textContent = title;  
-    document.getElementById('bookModalAuthor').textContent = 'Author: ' + author;  
-    document.getElementById('bookModalPrice').textContent = 'Price: ' + price;  
-    document.getElementById('bookModalImage').src = image;  
-    document.getElementById('bookModalDescription').textContent = description;  
+// function openBookModal(title, author, price, image, description) {  
+//     document.getElementById('bookModalLabel').textContent = title;  
+//     document.getElementById('bookModalAuthor').textContent = 'Author: ' + author;  
+//     document.getElementById('bookModalPrice').textContent = 'Price: ' + price;  
+//     document.getElementById('bookModalImage').src = image;  
+//     document.getElementById('bookModalDescription').textContent = description;  
     
-    // Show the modal  
-    const bookModal = new bootstrap.Modal(document.getElementById('bookModal'));  
-    bookModal.show();  
-}  
+//     // Show the modal  
+//     const bookModal = new bootstrap.Modal(document.getElementById('bookModal'));  
+//     bookModal.show();  
+// }  
 
 // Function to handle the buy action  
 document.getElementById('buya').addEventListener('click', function () {  
@@ -196,12 +197,32 @@ function updateRentedBooksModal() {
     });  
 }  
 
-// Example function to load book cards (already included in your code)  
-// Use this function to load books on the screen and set events on the cards  
-function loadBookCard(book) {  
-    openBookModal(book.title, book.author, book.price, book.image, book.description);  
-}  
+// // Example function to load book cards (already included in your code)  
+// // Use this function to load books on the screen and set events on the cards  
+// function loadBookCard(book) {  
+//     openBookModal(book.title, book.author, book.price, book.image, book.description);  
+// }  
 
 // Here you would call loadBookCard when a book card is clicked.
 });
+
+function loginVerification(){
+  const userName = "username";
+  const password = "root";
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("loginPassword").value;
+  if(user === "username"&&pass === "root"){
+  setTimeout(()=>{
+    let loginmessage = document.getElementById("userLogin");
+  loginmessage.innerHTML=`<i class="bi bi-person-circle fs-4 m-1"></i><span class="m-1 fs-6">${user}</span>`;
+  },200);
+  
+  
+  }
+  else{
+    alert("wrong password/username")
+  }
+
+}
+
 

@@ -1,14 +1,30 @@
 body {
   background: linear-gradient(to bottom, 
-    #fef6e4 0%, /* Light cream, welcoming and cozy */
-    #fde7b0 50%, /* Warm beige, soft and neutral */
-    #fbc687 75%, /* Soft coral, adding gentle vibrancy */
-    #fef6e4 100% /* Light cream again for balance */
-  );
+  #ff6b6b 0%, /* Bright red, bold and exciting */
+  #f7b7a3 50%, /* Light pink, sweet and playful */
+  #f8c1c1 100% /* Pale pink, soft and tender */
+);
+
 }
 
+.container-fluid a {
+  cursor: pointer;
+  padding: 10px;
+  margin: 0.3rem 1.5rem;
+  border: 2px solid transparent; /* Start with a transparent border */
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+  font-size: 17px;
+}
 
+.container-fluid a:hover {
+  box-shadow: 1px 1px 3px 3px white; /* Increase border size with box-shadow on hover */
+}
 
+.navbar {
+  max-height: 70px; /* Adjust this height as per your design */
+  overflow: hidden;
+}
 
 /* Navbar Logo */
 .navbar-logo {
@@ -72,5 +88,9 @@ body {
   .carousel-control-prev-icon:hover,
   .carousel-control-next-icon:hover {
     background-color: rgba(0, 0, 0, 0.8);
+  }
+
+    #size1 ,#size2,#size3{
+    height :300px;
   }
   
