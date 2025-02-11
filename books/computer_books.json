@@ -2,105 +2,120 @@
     {
         "title": "Learn JavaScript",
         "author": "John Doe",
-        "cost": "$20",
+        "price": "₹1660",
+        "rental_price": "₹166 ",
         "description": "A comprehensive guide to mastering JavaScript for web development.",
         "image": "https://m.media-amazon.com/images/I/51YB0gZp+aL._SX342_SY445_.jpg"
     },
     {
         "title": "Python for Beginners",
         "author": "Jane Smith",
-        "cost": "$15",
+        "price": "₹1245",
+        "rental_price": " ₹125 ",
         "description": "An easy-to-follow guide for learning Python programming.",
         "image": "https://m.media-amazon.com/images/I/518csN6TPsL._SY445_SX342_.jpg"
     },
     {
         "title": "R Programming",
         "author": "A Wiley Brand",
-        "cost": "$25",
+        "price": "₹2075",
+        "rental_price": "₹208 ",
         "description": "R is a free, open-source programming language used for statistical analysis, data visualization, and machine learning.",
         "image": "https://m.media-amazon.com/images/I/51ba9iQ7pxL._SX342_SY445_.jpg"
     },
     {
         "title": "Web Development with HTML & CSS",
         "author": "James Bond",
-        "cost": "$25",
+        "price": "₹2075",
+        "rental_price": "₹208 ",
         "description": "Step-by-step instructions to create beautiful websites using HTML and CSS.",
         "image": "https://m.media-amazon.com/images/I/51vaW9RuK0L._SY445_SX342_.jpg"
     },
     {
         "title": "JavaScript: The Good Parts",
         "author": "Douglas Crockford",
-        "cost": "$22",
+        "price": "₹1826",
+        "rental_price": "₹183 ",
         "description": "A deep dive into the most essential and powerful features of JavaScript.",
         "image": "https://m.media-amazon.com/images/I/7185IMvz88L._AC_UF1000,1000_QL80_.jpg"
     },
     {
         "title": "Mastering Python",
         "author": "Rafael A. Schmitz",
-        "cost": "$30",
+        "price": "₹2490",
+        "rental_price": "₹249 ",
         "description": "Master advanced Python concepts and libraries for data science and web development.",
         "image": "https://m.media-amazon.com/images/I/71RaqgIOySL._AC_UF1000,1000_QL80_.jpg"
     },
     {
         "title": "The Pragmatic Programmer",
         "author": "Andrew Hunt, David Thomas",
-        "cost": "$45",
+        "price": "₹3735",
+        "rental_price": "₹374 ",
         "description": "A guide to becoming a pragmatic and effective software developer.",
         "image": "https://m.media-amazon.com/images/I/61ztlXgCmpL._AC_UF1000,1000_QL80_.jpg"
     },
     {
         "title": "HTML and CSS: Design and Build Websites",
         "author": "Jon Duckett",
-        "cost": "$25",
+        "price": "₹2075",
+        "rental_price": "₹208 ",
         "description": "A beginner-friendly guide to learning web development with HTML and CSS.",
         "image": "https://i.pinimg.com/474x/f7/33/df/f733dfdbe7219ea0875ba799e68d9ef8.jpg"
     },
     {
         "title": "Eloquent JavaScript",
         "author": "Marijn Haverbeke",
-        "cost": "$28",
+        "price": "₹2324",
+        "rental_price": "₹232 ",
         "description": "A modern introduction to JavaScript programming.",
         "image": "https://m.media-amazon.com/images/I/81HqVRRwp3L.jpg"
     },
     {
         "title": "Data Science for Business",
         "author": "Foster Provost, Tom Fawcett",
-        "cost": "$40",
+        "price": "₹3320",
+        "rental_price": "₹332 ",
         "description": "An introduction to data science concepts and techniques for business decision-making.",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_y8zGEJgyeRQo5ApTnEE_JJjvZ_nIONiXvA&s"
     },
     {
         "title": "Learning Python",
         "author": "Mark Lutz",
-        "cost": "$50",
+        "price": "₹4150",
+        "rental_price": "₹415 ",
         "description": "An in-depth guide to mastering Python for professional development.",
         "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386922968i/80435.jpg"
     },
     {
         "title": "Introduction to Algorithms",
         "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest",
-        "cost": "$60",
+        "price": "₹4980",
+        "rental_price": "₹498 ",
         "description": "A comprehensive introduction to algorithms and their applications.",
         "image": "https://m.media-amazon.com/images/I/51t9dzkdRsL._UF1000,1000_QL80_.jpg"
     },
     {
         "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
         "author": "Robert C. Martin",
-        "cost": "$35",
+        "price": "₹2905",
+        "rental_price": "₹291 ",
         "description": "A practical guide to writing clean, maintainable code in software development.",
         "image": "https://m.media-amazon.com/images/I/71T7aD3EOTL._UF1000,1000_QL80_.jpg"
     },
     {
         "title": "Learning Web Design",
         "author": "Jennifer Niederst Robbins",
-        "cost": "$40",
+        "price": "₹3320",
+        "rental_price": "₹332 ",
         "description": "A comprehensive guide to web design principles and best practices.",
         "image": "https://m.media-amazon.com/images/I/61XKPsrX7DL._AC_UF1000,1000_QL80_.jpg"
     },
     {
         "title": "JavaScript: The Definitive Guide",
         "author": "David Flanagan",
-        "cost": "$45",
+        "price": "₹3735",
+        "rental_price": "₹374 ",
         "description": "An authoritative guide to JavaScript, from beginner to advanced concepts.",
         "image": "https://m.media-amazon.com/images/I/91xorHXzWbL._AC_UF1000,1000_QL80_.jpg"
     }

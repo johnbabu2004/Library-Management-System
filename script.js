@@ -56,19 +56,22 @@ document.getElementById("art_books").addEventListener("click", () => {
         card.className = 'col-lg-3 col-md-4 col-sm-6 m-4';
     
         card.innerHTML = `
-          <div class="card h-100">
+          <div class="card">
             <img src="${book.image}" class="card-img-top" alt="${book.title}">
             <div class="card-body">
               <h5 class="card-title">${book.title}</h5>
-              <p class="card-text">Author: ${book.author}</p>
-              <p class="card-text">Price: ${book.cost}</p>
-              <button class="btn btn-primary" 
+              <p class="card-text"><strong>Author:</strong> ${book.author}</p>
+              <p class="card-text"><strong>Price:</strong> ${book.price}</p>
+              <p class="card-text"><strong>Rental-price:</strong> ${book.rental_price}</p>
+
+              <button class="btn btn-primary mb-2" 
                 data-bs-toggle="modal" 
                 data-bs-target="#bookModal" 
                 data-title="${book.title}" 
                 data-author="${book.author}" 
-                data-cost="${book.cost}" 
+                data-price="${book.price}" 
                 data-image="${book.image}" 
+                data-rent="${book.rental_price}"
                 data-description="${book.description}">
                 Learn More
               </button>
@@ -108,21 +111,24 @@ window.addEventListener('DOMContentLoaded', loadHome);
   const bookModalImage = document.getElementById('bookModalImage');
   const bookModalDescription = document.getElementById('bookModalDescription');
   const bookModalAuthor = document.getElementById('bookModalAuthor');
-  const bookModalcost = document.getElementById('bookModalcost');
+  const bookModalPrice = document.getElementById('bookModalPrice');
+  const bookModalRent = document.getElementById('bookRentalPrice');
   bookModal.addEventListener('show.bs.modal', (event) => {
     const button = event.relatedTarget; // Button that triggered the modal
     const title = button.getAttribute('data-title');
     const author = button.getAttribute('data-author');
-    const cost = button.getAttribute('data-cost');
+    const price = button.getAttribute('data-price');
     const image = button.getAttribute('data-image');
+    const rentalPrice =button.getAttribute('data-rent')
     const description = button.getAttribute('data-description');
 
     // Update modal content
     bookModalLabel.textContent = title;
     bookModalImage.src = image;
-    bookModalDescription.textContent = description;
-    bookModalAuthor.textContent = `Author: ${author}`;
-    bookModalcost.textContent = `cost: ${cost}`;
+    bookModalDescription.innerHTML = description;
+    bookModalAuthor.innerHTML =`<strong>Author:</strong> ${author}`;
+    bookModalPrice.innerHTML = `<strong>Price: </strong>${price}`;
+    bookModalRent.innerHTML = `<strong>Rental price:</strong> ${rentalPrice}`;
   });
 // Sample arrays to store purchased and rented books  
 let purchasedBooks = [];  
@@ -147,7 +153,6 @@ document.getElementById('buya').addEventListener('click', function () {
     const title = document.getElementById('bookModalLabel').textContent;  
     const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
     const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
-
     const book = { title, author, price };  
     purchasedBooks.push(book);  
     updatePurchasedBooksModal();  
@@ -161,9 +166,9 @@ document.getElementById('renta').addEventListener('click', function () {
     alert("Book Rented Successfully");
     const title = document.getElementById('bookModalLabel').textContent;  
     const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
-    const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
+    const rentalPrice = document.getElementById('bookRentalPrice').textContent.replace('Rental-price: ', '')
      
-    const book = { title, author, price };  
+    const book = { title, author,rentalPrice};  
     rentedBooks.push(book);  
     updateRentedBooksModal();  
      
@@ -192,7 +197,7 @@ function updateRentedBooksModal() {
     rentedBooks.forEach(book => {  
         const listItem = document.createElement('li');  
         listItem.className = 'list-group-item';  
-        listItem.textContent = `${book.title} by ${book.author} - ${book.price}`;  
+        listItem.textContent = `${book.title} by ${book.author} - ${book.rentalPrice}`;  
         rentedBooksContainer.appendChild(listItem);  
     });  
 }  
@@ -209,19 +214,24 @@ function updateRentedBooksModal() {
 function loginVerification(){
   const userName = "username";
   const password = "root";
-  let user = document.getElementById("username").value;
-  let pass = document.getElementById("loginPassword").value;
-  if(user === "username"&&pass === "root"){
+  let user = document.getElementById("username").value.trim();
+  let pass = document.getElementById("loginPassword").value.trim();
   setTimeout(()=>{
+  if(user === userName &&pass === password){
     let loginmessage = document.getElementById("userLogin");
   loginmessage.innerHTML=`<i class="bi bi-person-circle fs-4 m-1"></i><span class="m-1 fs-6">${user}</span>`;
-  },200);
-  
-  
+  let loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
+  if (loginModal) {
+      loginModal.hide();
+  }
   }
   else{
-    alert("wrong password/username")
+    let error = document.getElementById("loginError");
+    error.innerHTML = `Wrong ussername/password`;
+
   }
+},200);
+  
 
 }
 
