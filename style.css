@@ -7,23 +7,24 @@ body {
   background-color:rgb(238, 233, 224);
 }
 
-.container-fluid a {
+.nav-item a{
   cursor: pointer;
   padding: 10px;
   margin: 0.5rem;
   border: 2px solid transparent; /* Start with a transparent border */
   border-radius: 5px;
   transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
-  font-size: 17px;
+  font-size: 15px;
 }
 
-.container-fluid a:hover {
+.nav-item a:hover{
   box-shadow: 1px 1px 3px 3px white; /* Increase border size with box-shadow on hover */
 }
 
+
 .navbar {
-  max-height: auto; 
-  overflow:visible;
+  min-height: 50px;
+  overflow: visible;
 }
 #navLogo{
  border-radius: 5px;

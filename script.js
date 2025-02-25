@@ -1,111 +1,51 @@
+import { attachUserProfileListener } from './js/attachuserprofile.js';
+import { createCards } from './js/createcards.js'
+import { loadHome } from './js/loadhome.js';
+import { loginVerification } from './js/loginverify.js';
+import { restoreSession } from './js/restoresession.js';
+import { updatePurchasedBooksModal } from './js/updatepurchasedbooksmodal.js';
+import { updateRentedBooksModal } from './js/updaterentedbooksmodal.js';
+
 
 document.getElementById("computer_books").addEventListener("click", () => {
-    fetch('books/computer_books.json')
+  fetch('books/computer_books.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
-      createCards(data);     
+      createCards(data);
     })
     .catch(err => console.error('Error loading JSON:', err));
-  
-
-  });
+});
 document.getElementById("art_books").addEventListener("click", () => {
-    fetch('books/arts_books.json')
+  fetch('books/arts_books.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
-          createCards(data);    
+      createCards(data);
     })
     .catch(err => console.error('Error loading JSON:', err));
-  
-
-  });
-  document.getElementById("law_books").addEventListener("click", () => {
-    fetch('books/law_books.json')
+});
+document.getElementById("law_books").addEventListener("click", () => {
+  fetch('books/law_books.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
-          createCards(data);    
+      createCards(data);
     })
     .catch(err => console.error('Error loading JSON:', err));
-  
-
-  });
-
-  document.getElementById("medical_books").addEventListener("click", () => {
-    fetch('books/medical_books.json')
+});
+document.getElementById("medical_books").addEventListener("click", () => {
+  fetch('books/medical_books.json')
     .then(response => response.json()) // Parse the JSON data
     .then(data => {
-          createCards(data);    
+      createCards(data);
     })
     .catch(err => console.error('Error loading JSON:', err));
-  
-
-  });
+});
 
 
-    // Function to create cards dynamically
-
-    function createCards(books) {
-      const container = document.getElementById('books-container'); // Container for cards
-    
-      // Clear the container first to avoid appending duplicate cards
-      container.innerHTML = '';
-    
-      books.forEach(book => {
-        // Create card elements
-        const card = document.createElement('div');
-        card.className = 'col-lg-3 col-md-4 col-sm-6 m-4';
-    
-        card.innerHTML = `
-          <div class="card">
-            <img src="${book.image}" class="card-img-top" alt="${book.title}">
-            <div class="card-body">
-              <h5 class="card-title">${book.title}</h5>
-              <p class="card-text"><strong>Author:</strong> ${book.author}</p>
-              <p class="card-text"><strong>Price:</strong> ${book.price}</p>
-              <p class="card-text"><strong>Rental-price:</strong> ${book.rental_price}</p>
-
-              <button class="btn btn-primary mb-2" 
-                data-bs-toggle="modal" 
-                data-bs-target="#bookModal" 
-                data-title="${book.title}" 
-                data-author="${book.author}" 
-                data-price="${book.price}" 
-                data-image="${book.image}" 
-                data-rent="${book.rental_price}"
-                data-description="${book.description}">
-                Learn More
-              </button>
-            </div>
-          </div>
-        `;
-    
-        // Append card to container
-        container.appendChild(card);
-      });
-    }
-    
-  function loadHome() {
-    const container = document.getElementById('books-container');
-
-    // Fetch the content of home.html
-    fetch('home.html')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error fetching home.html: ${response.statusText}`);
-            }
-            return response.text(); // Convert the response to text
-        })
-        .then(html => {
-            container.innerHTML = html; // Inject the HTML content into the container
-        })
-        .catch(error => {
-            console.error('Error loading content:', error);
-            container.innerHTML = '<p>Error loading content. Please try again later.</p>';
-        });
-}
 window.addEventListener('DOMContentLoaded', loadHome);
+window.addEventListener('DOMContentLoaded',   attachUserProfileListener);
 
-  document.addEventListener('DOMContentLoaded', () => {
+document.getElementById('loginButton').addEventListener('click',loginVerification)
+document.addEventListener('DOMContentLoaded', () => {
   const bookModal = document.getElementById('bookModal');
   const bookModalLabel = document.getElementById('bookModalLabel');
   const bookModalImage = document.getElementById('bookModalImage');
@@ -119,120 +59,171 @@ window.addEventListener('DOMContentLoaded', loadHome);
     const author = button.getAttribute('data-author');
     const price = button.getAttribute('data-price');
     const image = button.getAttribute('data-image');
-    const rentalPrice =button.getAttribute('data-rent')
+    const rentalPrice = button.getAttribute('data-rent')
     const description = button.getAttribute('data-description');
 
     // Update modal content
     bookModalLabel.textContent = title;
     bookModalImage.src = image;
     bookModalDescription.innerHTML = description;
-    bookModalAuthor.innerHTML =`<strong>Author:</strong> ${author}`;
+    bookModalAuthor.innerHTML = `<strong>Author:</strong> ${author}`;
     bookModalPrice.innerHTML = `<strong>Price: </strong>${price}`;
     bookModalRent.innerHTML = `<strong>Rental price:</strong> ${rentalPrice}`;
   });
-// Sample arrays to store purchased and rented books  
-let purchasedBooks = [];  
-let rentedBooks = [];  
+});
+// Function to handle the buy action 
+const buyButton = document.getElementById('buya');
+buyButton.addEventListener('click', () => {
+  const title = document.getElementById('bookModalLabel').textContent;
+  const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');
+  alert("Purcahsed successfully")
+  // Check if the user is logged in
+  let user = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!user) {
+    alert("Please log in first!");
+    return;  // Exit if no user is logged in
+  }
 
-// Function to open the book modal and populate its content  
-// function openBookModal(title, author, price, image, description) {  
-//     document.getElementById('bookModalLabel').textContent = title;  
-//     document.getElementById('bookModalAuthor').textContent = 'Author: ' + author;  
-//     document.getElementById('bookModalPrice').textContent = 'Price: ' + price;  
-//     document.getElementById('bookModalImage').src = image;  
-//     document.getElementById('bookModalDescription').textContent = description;  
-    
-//     // Show the modal  
-//     const bookModal = new bootstrap.Modal(document.getElementById('bookModal'));  
-//     bookModal.show();  
-// }  
+  const price = document.getElementById('bookModalPrice').textContent.trim().replace('Price: ', '');
 
-// Function to handle the buy action  
-document.getElementById('buya').addEventListener('click', function () {  
-  alert("Book Purchased Successfully");
-    const title = document.getElementById('bookModalLabel').textContent;  
-    const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
-    const price = document.getElementById('bookModalPrice').textContent.replace('Price: ', '');  
-    const book = { title, author, price };  
-    purchasedBooks.push(book);  
-    updatePurchasedBooksModal();  
+  // Set hx-vals for the rent button
+  buyButton.setAttribute('hx-vals', JSON.stringify({
+    username: user.username,
+    title: title,
+    author: author,
+    price: price
+  }));
 
-    const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));  
-    bookModal.hide();  
-});  
-
-// Function to handle the rent action  
-document.getElementById('renta').addEventListener('click', function () {  
-    alert("Book Rented Successfully");
-    const title = document.getElementById('bookModalLabel').textContent;  
-    const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');  
-    const rentalPrice = document.getElementById('bookRentalPrice').textContent.replace('Rental-price: ', '')
-     
-    const book = { title, author,rentalPrice};  
-    rentedBooks.push(book);  
-    updateRentedBooksModal();  
-     
-    const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));  
-    bookModal.hide();  
-});  
-
-// Function to update the purchased books modal view  
-function updatePurchasedBooksModal() {  
-    const purchasedBooksContainer = document.getElementById('purchasedBooksContainer');  
-    purchasedBooksContainer.innerHTML = ''; // Clear previous entries  
-
-    purchasedBooks.forEach(book => {  
-        const listItem = document.createElement('li');  
-        listItem.className = 'list-group-item';  
-        listItem.textContent = `${book.title} by ${book.author} - ${book.price}`;  
-        purchasedBooksContainer.appendChild(listItem);  
-    });  
-}  
-
-// Function to update the rented books modal view  
-function updateRentedBooksModal() {  
-    const rentedBooksContainer = document.getElementById('rentedBooksContainer');  
-    rentedBooksContainer.innerHTML = ''; // Clear previous entries  
-
-    rentedBooks.forEach(book => {  
-        const listItem = document.createElement('li');  
-        listItem.className = 'list-group-item';  
-        listItem.textContent = `${book.title} by ${book.author} - ${book.rentalPrice}`;  
-        rentedBooksContainer.appendChild(listItem);  
-    });  
-}  
-
-// // Example function to load book cards (already included in your code)  
-// // Use this function to load books on the screen and set events on the cards  
-// function loadBookCard(book) {  
-//     openBookModal(book.title, book.author, book.price, book.image, book.description);  
-// }  
-
-// Here you would call loadBookCard when a book card is clicked.
+  // Update purchased books list and hide modal
+  updatePurchasedBooksModal();
+  const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));
+  bookModal.hide();  // Hide the modal after purchase
 });
 
-function loginVerification(){
-  const userName = "username";
-  const password = "root";
-  let user = document.getElementById("username").value.trim();
-  let pass = document.getElementById("loginPassword").value.trim();
-  setTimeout(()=>{
-  if(user === userName &&pass === password){
-    let loginmessage = document.getElementById("userLogin");
-  loginmessage.innerHTML=`<i class="bi bi-person-circle fs-4 m-1"></i><span class="m-1 fs-6">${user}</span>`;
-  let loginModal = bootstrap.Modal.getInstance(document.getElementById("loginModal"));
-  if (loginModal) {
-      loginModal.hide();
+
+//handling rented books modal
+const rentButton = document.getElementById('renta')
+rentButton.addEventListener('click', function () {
+  const title = document.getElementById('bookModalLabel').textContent;
+  const author = document.getElementById('bookModalAuthor').textContent.replace('Author: ', '');
+
+  // Check if the user is logged in
+  let user = JSON.parse(localStorage.getItem("loggedInUser"));
+  if (!user) {
+    alert("Please log in first!");
+    return;  // Exit if no user is logged in
   }
+
+  const rentalPrice = document.getElementById('bookRentalPrice').textContent.replace('Rental-price: ', '');
+
+  // Set hx-vals for the rent button
+  rentButton.setAttribute('hx-vals', JSON.stringify({
+    username: user.username,
+    title: title,
+    author: author,
+    rental_price: rentalPrice
+  }));
+  // Update rented books list and hide modal
+  alert("Book Rented Successfully");
+  updateRentedBooksModal();  // Update the rented books list
+  const bookModal = bootstrap.Modal.getInstance(document.getElementById('bookModal'));
+  bookModal.hide();  // Hide the modal after renting
+});
+
+//  Function to Save Edited Profile Details in LocalStorage
+document.getElementById("saveProfileChanges").addEventListener("click", (event) => {
+  event.preventDefault(); // Prevent form submission
+
+  let user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (user) {
+    //  Get updated values from Edit Profile modal
+    user.name = document.getElementById("editName").value.trim() || "Unknown";
+    user.email = document.getElementById("editEmail").value.trim() || "N/A";
+    user.bio = document.getElementById("editBio").value.trim() || "No bio available";
+
+    //  Save updated user details in localStorage
+    localStorage.setItem("loggedInUser", JSON.stringify(user));
+
+    //  Reflect changes in Profile Modal
+    document.getElementById("profileName").textContent = user.name;
+    document.getElementById("ProfileEmail").innerHTML = `<strong>Email:</strong> ${user.email}`;
+    document.getElementById("profileBio").innerHTML = `<strong>Bio:</strong> ${user.bio}`;
+
+    //  Close Edit Profile Modal smoothly
+    let editProfileModal = bootstrap.Modal.getInstance(document.getElementById("editProfileModal"));
+    if (editProfileModal) {
+      editProfileModal.hide();
+    }
+  } else {
+    console.error("No logged-in user found.");
   }
-  else{
-    let error = document.getElementById("loginError");
-    error.innerHTML = `Wrong ussername/password`;
+});
 
+
+// //logout function
+//      document.getElementById("logoutButton").addEventListener("click", () => {
+//     // Ensure any open modals are properly closed
+//     let modalElement = document.querySelector(".modal.show");
+//     if (modalElement) {
+//         let modalInstance = bootstrap.Modal.getInstance(modalElement);
+//         if (modalInstance) {
+//             modalInstance.hide();
+//         }
+//     }
+
+//     // Clear login UI
+//     document.getElementById("loginButtonContainer").innerHTML = `
+//         <li class="nav-item">
+//             <a class="nav-link text-white fs-7" id="userLogin" data-bs-toggle="modal" data-bs-target="#loginModal">
+//                 <span><i class="bi bi-person fs-5"></i></span> Login
+//             </a>
+//         </li>`;
+
+//     localStorage.removeItem("loggedInUser"); 
+
+//     document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+
+//     document.body.classList.remove("modal-open");
+//     document.body.style.overflow = "auto";
+// });
+
+
+document.getElementById("loginModal").addEventListener("shown.bs.modal", function () {
+  document.getElementById("loginForm").reset(); //  Clears fields on modal open
+  document.getElementById("loginError").innerHTML = ""; //  Clears error message
+});
+window.onload = function () {
+  updateRentedBooksModal();
+  updatePurchasedBooksModal();
+  restoreSession();
+
+};
+
+
+// ✅ Logout Function
+document.getElementById("logoutButton").addEventListener("click", () => {
+  // ✅ Close any open modals
+  let modalElement = document.querySelector(".modal.show");
+  if (modalElement) {
+    let modalInstance = bootstrap.Modal.getInstance(modalElement);
+    if (modalInstance) {
+      modalInstance.hide();
+    }
   }
-},200);
-  
 
-}
+  // ✅ Clear login UI
+  document.getElementById("loginButtonContainer").innerHTML = `
+      <li class="nav-item">
+          <a class="nav-link text-white fs-7" id="userLogin" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <span><i class="bi bi-person fs-5"></i></span> Login
+          </a>
+      </li>`;
 
+  localStorage.removeItem("loggedInUser"); 
 
+  document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+
+  document.body.classList.remove("modal-open");
+  document.body.style.overflow = "auto";
+});
